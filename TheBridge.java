@@ -213,12 +213,10 @@ class Player {
     public static void main(String args[]) {
         Scanner in = new Scanner(System.in);
 
-        // Read the number of motorcycles and maximum speed
         int m = in.nextInt();
         int v = in.nextInt();
         in.nextLine();
 
-        // Read the lane configurations
         String[] lanes = new String[4];
         for (int i = 0; i < 4; i++) {
             lanes[i] = in.nextLine();
@@ -228,11 +226,9 @@ class Player {
         BridgeState state = null;
 
         while (true) {
-            // Read the current speed
             int speed = in.nextInt();
             in.nextLine();
 
-            // Read motorcycle positions and status
             for (int i = 0; i < m; i++) {
                 int x = in.nextInt();
                 int y = in.nextInt();
@@ -242,7 +238,6 @@ class Player {
             }
             state = new BridgeState(motorcycles, speed);
 
-            // Determine the optimal move
             String move = determineOptimalMove(state, m, lanes);
             if (move != null) {
                 System.out.println(move);
